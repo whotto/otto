@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王欢个人简介 - 作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .dark .card:hover {
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05), 0 10px 10px -5px rgba(255, 255, 255, 0.02);
+        }
+        
+        .project-card {
+            background-size: cover;
+            background-position: center;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card .overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .overlay {
+            padding-bottom: 2.5rem;
+        }
+        
+        .project-card .project-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部导航栏 -->
+        <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl font-bold text-primary-600 dark:text-primary-400">王欢</span>
+                        <span class="hidden sm:inline-block text-gray-500 dark:text-gray-400">| 个人作品集</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://huanwang.org" target="_blank" class="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fas fa-globe"></i>
+                            <span class="hidden sm:inline-block ml-1">huanwang.org</span>
+                        </a>
+                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400">
+                            <i class="fas fa-moon dark:hidden transition-transform duration-300"></i>
+                            <i class="fas fa-sun hidden dark:inline-block transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 个人信息区域 -->
+        <section class="bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-900 py-16 text-white section animate-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex items-center justify-between">
+                    <div class="md:w-2/3">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-fade-in">王欢</h1>
+                        <p class="text-lg md:text-xl opacity-90 mb-6 animate-fade-in" style="animation-delay: 0.1s">某科技企业创始合伙人</p>
+                        <div class="flex flex-wrap gap-3 animate-fade-in" style="animation-delay: 0.2s">
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">创业者</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">AI技术应用</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">企业管理</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">创新者</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0 text-right animate-fade-in" style="animation-delay: 0.3s">
+                        <p class="mb-1">作者：玄清</p>
+                        <p class="mb-1">邮箱：huanwangfly@gmail.com</p>
+                        <p class="mb-1">网站：<a href="https://huanwang.org" class="underline hover:text-primary-200 transition-colors">huanwang.org</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要内容区域 -->
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- 简介部分 -->
+            <section class="mb-16 section">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary-600 dark:text-primary-400">个人简介</h2>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p class="text-lg leading-relaxed mb-4">
+                            王欢，41岁，北京电子科技学院通信工程本科毕业，现为某科学仪器有限公司的合伙人。他是一位具有跨领域经验的创业者，长期致力于科技创新与企业管理，尤其在AI技术应用与创业领域展现了独到的见解和实践。王欢不仅具备深厚的技术背景，还拥有出色的战略思维与人力资源管理能力。在多年的职业生涯中，王欢凭借其卓越的领导力和技术创新，成功推动了多家企业的发展，并为社会创造了显著的价值。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 作品展示部分（加强版） -->
+            <section class="mb-16 section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center text-primary-600 dark:text-primary-400">作品展示</h2>
+                <p class="text-center text-gray-500 dark:text-gray-400 mb-12">我的数字作品与网站项目</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 项目卡片1：人生红点 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="人生红点" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-red-500 text-white">核心项目</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">人生红点</h3>
+                                <p class="text-sm font-light mb-3">liferedpoint.com</p>
+                                <p class="text-sm mb-4">基于心理学和决策科学的个人发展指导平台，通过AI技术帮助用户规划人生目标</p>
+                                <a href="https://liferedpoint.com" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目卡片2：AI工作流平台 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="AI工作流平台" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-blue-500 text-white">AI应用</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">AI工作流平台</h3>
+                                <p class="text-sm font-light mb-3">huanwang.org</p>
+                                <p class="text-sm mb-4">集成多种AI工具的自动化工作流平台，提升工作效率并优化创新流程</p>
+                                <a href="https://huanwang.org" target="_blank" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目卡片3：阅读分享平台 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="阅读分享平台" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-green-500 text-white">内容平台</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">阅读分享平台</h3>
+                                <p class="text-sm font-light mb-3">yuedu.biz</p>
+                                <p class="text-sm mb-4">精选优质阅读内容，促进知识交流与分享的社区平台</p>
+                                <a href="https：//yuedu.biz" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目卡片4：珍藏网站 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="珍藏网站" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-purple-500 text-white">资源库</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">珍藏网站</h3>
+                                <p class="text-sm font-light mb-3">360read.net</p>
+                                <p class="text-sm mb-4">收集整理各类珍贵资源，打造高质量内容的数字珍藏库</p>
+                                <a href="https://360read.net" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目卡片5：摄影网站 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="摄影网站" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-yellow-500 text-white">创意平台</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">摄影网站</h3>
+                                <p class="text-sm font-light mb-3">grow8.org</p>
+                                <p class="text-sm mb-4">展示精选摄影作品，分享摄影技巧与美学理念的创意平台</p>
+                                <a href="http://grow8.org" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目卡片6：复思科学仪器 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg card hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d09da83c7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80')">
+                            <img src="https://images.unsplash.com/photo-1581093458791-9d09da83c7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80" alt="科学仪器" class="w-full h-0 invisible" loading="lazy" />
+                            <div class="project-type bg-indigo-500 text-white">企业项目</div>
+                            <div class="overlay text-white">
+                                <h3 class="text-xl font-bold mb-1">科学仪器</h3>
+                                <p class="text-sm font-light mb-3">公司官网</p>
+                                <p class="text-sm mb-4">为科研、教育及工业领域提供先进的分析仪器设备和解决方案</p>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-white">
+                                    <span>访问网站</span>
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 作品统计 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">5+</div>
+                        <div class="text-gray-500 dark:text-gray-400">网站项目</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">3000+</div>
+                        <div class="text-gray-500 dark:text-gray-400">用户</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">120+</div>
+                        <div class="text-gray-500 dark:text-gray-400">内容发布</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">10+</div>
+                        <div class="text-gray-500 dark:text-gray-400">技术栈</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 时间线部分 -->
+            <section class="mb-16 section">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-primary-600 dark:text-primary-400">职业历程</h2>
+                <div class="max-w-4xl mx-auto">
+                    <!-- 时间线项目 -->
+                    <div class="flex flex-col md:grid grid-cols-9 gap-6">
+                        <div class="flex flex-col col-span-4 card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                            <span class="text-primary-600 dark:text-primary-400 font-semibold">2022年至今</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">科学仪器企业</h3>
+                            <p class="text-gray-600 dark:text-gray-400">创始合伙人</p>
+                            <p class="mt-3">专注于为科研、教育及工业领域提供先进的分析仪器设备和解决方案，推动科技创新与发展。</p>
+                        </div>
+                        <div class="hidden md:block col-span-1 relative">
+                            <div class="h-full w-1 bg-primary-200 dark:bg-primary-800 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="absolute w-4 h-4 rounded-full bg-primary-600 dark:bg-primary-400 left-1/2 top-8 transform -translate-x-1/2"></div>
+                        </div>
+                        <div class="col-span-4"></div>
+                        
+                        <div class="col-span-4"></div>
+                        <div class="hidden md:block col-span-1 relative">
+                            <div class="h-full w-1 bg-primary-200 dark:bg-primary-800 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="absolute w-4 h-4 rounded-full bg-primary-600 dark:bg-primary-400 left-1/2 top-8 transform -translate-x-1/2"></div>
+                        </div>
+                        <div class="flex flex-col col-span-4 card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                            <span class="text-primary-600 dark:text-primary-400 font-semibold">之前职业</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">多家知名企业</h3>
+                            <p class="text-gray-600 dark:text-gray-400">管理岗位</p>
+                            <p class="mt-3">曾在大型央企担任人事负责人，高科技企业总经理助理，软件企业副总裁，高等院校副处长等职务，积累了丰富的管理经验。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心领域部分 -->
+            <section class="mb-16 section">
+                <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center text-primary-600 dark:text-primary-400">核心领域与专长</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="text-primary-600 dark:text-primary-400 text-3xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI技术应用</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            将AI视为一种思维方式，深入探索AI在企业管理、产品创新及个人成长中的应用，通过AI工具优化工作流程。
+                        </p>
+                    </div>
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="text-primary-600 dark:text-primary-400 text-3xl mb-4">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">企业管理</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            拥有丰富的人力资源管理与企业运营经验，在团队建设、绩效管理和组织架构优化方面具备专业能力。
+                        </p>
+                    </div>
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="text-primary-600 dark:text-primary-400 text-3xl mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">创新创业</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            具备跨界思维和创新能力，成功推动多个创业项目，尤其专注于科技创新领域的商业化应用。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 工作方法论部分 -->
+            <section class="mb-16 section">
+                <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center text-primary-600 dark:text-primary-400">AI工作方法论</h2>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-4">AI赋能工作流</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                王欢通过整合多种AI工具打造高效工作流，实现自动化内容生成、数据处理和决策辅助。
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="bg-primary-100 dark:bg-primary-900 rounded-full p-1 mr-3">
+                                        <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <span>整合ChatGPT、Cursor等多种AI工具</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-primary-100 dark:bg-primary-900 rounded-full p-1 mr-3">
+                                        <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <span>构建自动化内容创作流程</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-primary-100 dark:bg-primary-900 rounded-full p-1 mr-3">
+                                        <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <span>批量数据处理与分析</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-primary-100 dark:bg-primary-900 rounded-full p-1 mr-3">
+                                        <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <span>AI辅助决策与战略规划</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-gradient-to-r from-primary-500 to-primary-700 dark:from-primary-700 dark:to-primary-900 text-white p-8 flex items-center">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">AI不仅是工具，更是思维方式</h3>
+                                <p class="mb-6 opacity-90">
+                                    在王欢看来，AI不仅仅是一个提高效率的工具，它更是一种新的思维方式。这种思维方式将深入影响企业管理、产品创新以及个人成长。
+                                </p>
+                                <p class="opacity-90">
+                                    通过系统化思维，AI帮助拆解复杂问题，探索背后的深层规律，实现跨界赋能和创新突破。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 理念与价值观部分 -->
+            <section class="mb-16 section">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary-600 dark:text-primary-400">理念与价值观</h2>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                        <div class="flex flex-col space-y-6">
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary-600 dark:text-primary-400 text-xl">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div>
+                                    <p class="text-lg mb-2">"朝闻道，夕死可矣"</p>
+                                    <p class="text-gray-600 dark:text-gray-400">
+                                        王欢的个人价值观深受这一哲学思想影响。他始终追求个人与社会的共同成长，在帮助他人和贡献社会方面始终保持着强烈的使命感。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary-600 dark:text-primary-400 text-xl">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <p class="text-lg mb-2">终身学习</p>
+                                    <p class="text-gray-600 dark:text-gray-400">
+                                        累计在一堂、得到APP上的学习时间超过7000小时，不断通过实践与理论的结合提升自己的管理能力与决策水平。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary-600 dark:text-primary-400 text-xl">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <p class="text-lg mb-2">平衡与和谐</p>
+                                    <p class="text-gray-600 dark:text-gray-400">
+                                        无论是在事业上，还是在家庭中，他都注重平衡与和谐，倡导以家庭为核心，注重家庭成员的幸福和共同成长。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系合作部分 -->
+            <section class="mb-16 section">
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-xl p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-primary-600 dark:text-primary-400">联系与合作</h2>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <div class="text-primary-600 dark:text-primary-400 text-2xl mb-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">电子邮件</h3>
+                                <p class="text-gray-600 dark:text-gray-400">huanwangfly@gmail.com</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <div class="text-primary-600 dark:text-primary-400 text-2xl mb-3">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">个人网站</h3>
+                                <p class="text-gray-600 dark:text-gray-400">huanwang.org</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <div class="text-primary-600 dark:text-primary-400 text-2xl mb-3">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">公司</h3>
+                                <p class="text-gray-600 dark:text-gray-400">科学仪器企业</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 未来展望部分 -->
+            <section class="section">
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-xl p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-primary-600 dark:text-primary-400">未来展望</h2>
+                    <p class="text-lg text-center max-w-3xl mx-auto">
+                        王欢将继续专注于科技创新与企业发展，推动仪器公司在分析仪器领域的领先地位，并不断探索AI与在线教育领域的新机遇。他相信，随着AI技术的不断发展，将为更多行业带来前所未有的变革，推动人类进入一个全新的智能时代。
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="bg-gray-100 dark:bg-gray-800 py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p>© <span id="current-year"></span> 版权所有</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://huanwang.org" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="mailto:huanwangfly@gmail.com" class="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 深色模式切换
+        const themeToggle = document.getElementById('theme-toggle');
+        // 记忆用户主题选择
+        function setTheme(theme) {
+            if(theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        // 初始化主题
+        const savedTheme = localStorage.getItem('theme');
+        if(savedTheme) {
+            setTheme(savedTheme);
+        } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+        // 切换主题
+        themeToggle.addEventListener('click', () => {
+            if(document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+        // 滚动动画
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        // 页脚年份自动更新
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
